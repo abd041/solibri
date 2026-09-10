@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+*.log
+homepage.html
+homepage_pretty.txt
+source.css
+downloaded-assets
+extract_*.py
+pretty_html.py
+custom_css_extract.txt
+css_snippets.txt
+syringe.svg.raw
+honeycomb.svg.raw
