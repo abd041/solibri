@@ -12,3 +12,5 @@ custom_css_extract.txt
 css_snippets.txt
 syringe.svg.raw
 honeycomb.svg.raw
+qa-*
+screenshot-*.mjs
