@@ -85,7 +85,7 @@ export function CartDrawer() {
               </p>
               <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-surface-raised">
                 <div
-                  className="h-full rounded-full bg-[linear-gradient(90deg,#e2590e,#f3985a)] transition-all duration-500"
+                  className="h-full rounded-full bg-[linear-gradient(90deg,#d4af37,#dfc056)] transition-all duration-500"
                   style={{ width: `${progress}%` }}
                 />
               </div>

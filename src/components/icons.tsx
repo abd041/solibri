@@ -354,7 +354,7 @@ export function StarIcon({ filled = true, ...props }: IconProps & { filled?: boo
       strokeWidth="1.7"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={filled ? "text-amber-300" : "text-fg/15"}
+      className={filled ? "text-brand-300" : "text-fg/15"}
       {...base(props, 13)}
     >
       <path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.6 1.1 6.45L12 17.9l-5.8 3.05 1.1-6.45-4.7-4.6 6.5-.95z" />

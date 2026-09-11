@@ -56,7 +56,7 @@ export function ContactForm() {
   if (sent) {
     return (
       <div className="glass-strong flex flex-col items-center gap-4 rounded-3xl p-8 text-center sm:p-10">
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-400/15 text-brand-300 shadow-[0_0_30px_-4px_rgba(226,89,14,0.8)]">
+        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-400/15 text-brand-300 shadow-[0_0_30px_-4px_rgba(212,175,55,0.8)]">
           <CheckIcon size={26} />
         </span>
         <h3 className="font-display text-xl font-extrabold text-fg">Message sent</h3>

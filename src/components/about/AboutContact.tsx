@@ -20,7 +20,7 @@ export function AboutContact() {
           width: "32rem",
           height: "32rem",
           opacity: 0.25,
-          background: "radial-gradient(circle, rgba(226,89,14,0.9) 0%, rgba(226,89,14,0) 70%)",
+          background: "radial-gradient(circle, rgba(212,175,55,0.9) 0%, rgba(212,175,55,0) 70%)",
           bottom: "-15%",
           right: "-10%",
         }}

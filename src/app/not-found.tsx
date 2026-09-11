@@ -16,11 +16,11 @@ export default function NotFound() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(55% 45% at 50% 15%, rgba(226,89,14,0.22), transparent 70%), radial-gradient(40% 35% at 80% 80%, rgba(226,89,14,0.08), transparent 65%)",
+            "radial-gradient(55% 45% at 50% 15%, rgba(212,175,55,0.22), transparent 70%), radial-gradient(40% 35% at 80% 80%, rgba(212,175,55,0.08), transparent 65%)",
         }}
       />
       <div className="relative z-10 mx-auto w-full max-w-lg">
-        <p className="font-display text-[clamp(4.5rem,16vw,8rem)] font-black leading-none tracking-[-0.04em] text-transparent [-webkit-text-stroke:1.5px_rgba(226,89,14,0.55)]">
+        <p className="font-display text-[clamp(4.5rem,16vw,8rem)] font-black leading-none tracking-[-0.04em] text-transparent [-webkit-text-stroke:1.5px_rgba(212,175,55,0.55)]">
           404
         </p>
         <h1 className="mt-3 font-display text-2xl font-extrabold tracking-[-0.02em] text-fg sm:text-3xl">

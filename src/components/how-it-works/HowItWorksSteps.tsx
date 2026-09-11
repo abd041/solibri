@@ -25,7 +25,7 @@ export function HowItWorksSteps() {
           <div
             aria-hidden="true"
             className="absolute left-0 right-0 top-12 hidden h-px md:block"
-            style={{ background: "linear-gradient(90deg,transparent,rgba(226,89,14,0.3),transparent)" }}
+            style={{ background: "linear-gradient(90deg,transparent,rgba(212,175,55,0.3),transparent)" }}
           />
           {howItWorksSteps.map((step, index) => (
             <div key={step.n} className="reveal" style={{ ["--reveal-delay" as string]: `${index * 120}ms` }}>
@@ -34,7 +34,7 @@ export function HowItWorksSteps() {
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-400/12 text-brand-300 ring-1 ring-inset ring-brand-400/20">
                     {icons[step.icon]}
                   </span>
-                  <span className="font-display text-4xl font-extrabold leading-none text-transparent [-webkit-text-stroke:1.5px_rgba(226,89,14,0.35)] sm:text-5xl">
+                  <span className="font-display text-4xl font-extrabold leading-none text-transparent [-webkit-text-stroke:1.5px_rgba(212,175,55,0.35)] sm:text-5xl">
                     {step.n}
                   </span>
                 </div>

@@ -31,7 +31,7 @@ export function MobileBagBar() {
         <button
           type="button"
           onClick={openCart}
-          className="flex w-full items-center justify-between gap-3 rounded-full bg-brand-600 px-5 py-3.5 text-fg-on-brand shadow-[0_10px_34px_-6px_rgba(226,89,14,0.6)] transition-transform active:scale-[0.98]"
+          className="flex w-full items-center justify-between gap-3 rounded-full bg-brand-600 px-5 py-3.5 text-fg-on-brand shadow-[0_10px_34px_-6px_rgba(212,175,55,0.6)] transition-transform active:scale-[0.98]"
         >
           <span className="flex items-center gap-2 font-semibold">
             <CartIcon size={18} />

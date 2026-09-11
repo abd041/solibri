@@ -22,7 +22,7 @@ export function ProductCard({ product, delay = 0 }: { product: Product; delay?: 
         >
           <div
             className="absolute -inset-1.5 rounded-[18px] blur-2xl"
-            style={{ background: "radial-gradient(55% 55% at 50% 25%, rgba(226,89,14,0.35), transparent 72%)" }}
+            style={{ background: "radial-gradient(55% 55% at 50% 25%, rgba(212,175,55,0.35), transparent 72%)" }}
           />
         </div>
         <div className="relative flex h-full flex-row transition-transform duration-300 ease-out sm:flex-col [@media(hover:hover)]:group-hover:-translate-y-0.5">
@@ -35,14 +35,14 @@ export function ProductCard({ product, delay = 0 }: { product: Product; delay?: 
             className="relative z-10 flex h-full min-h-0 w-full flex-row rounded-[16px] sm:flex-col"
             style={{
               background: "linear-gradient(160deg, rgba(26, 19, 13, 0.98) 0%, rgba(11, 9, 8, 0.99) 100%)",
-              filter: "drop-shadow(0 0 0.55px rgba(226, 89, 14, 0.55))",
+              filter: "drop-shadow(0 0 0.55px rgba(212, 175, 55, 0.55))",
             }}
           >
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 z-30 hidden opacity-0 transition-opacity duration-300 [@media(hover:hover)]:block [@media(hover:hover)]:group-hover:opacity-100"
               style={{
-                background: "radial-gradient(140px 140px at 50% 0%, rgba(255,180,120,0.16), transparent 70%)",
+                background: "radial-gradient(140px 140px at 50% 0%, rgba(232,208,122,0.16), transparent 70%)",
               }}
             />
             <Link

@@ -12,7 +12,7 @@ export function AboutStory() {
           width: "36rem",
           height: "36rem",
           opacity: 0.28,
-          background: "radial-gradient(circle, rgba(226,89,14,0.9) 0%, rgba(226,89,14,0) 70%)",
+          background: "radial-gradient(circle, rgba(212,175,55,0.9) 0%, rgba(212,175,55,0) 70%)",
           top: "-10%",
           left: "-15%",
         }}

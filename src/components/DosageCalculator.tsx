@@ -143,7 +143,7 @@ function ResultAlerts({ result }: { result: CalculatorResult }) {
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-amber-100">
             Exceeds 100-unit syringe
-            <span className="ml-2 font-normal tabular-nums text-amber-300/70">
+            <span className="ml-2 font-normal tabular-nums text-brand-300/70">
               ({draw} ml · {units} units)
             </span>
           </p>

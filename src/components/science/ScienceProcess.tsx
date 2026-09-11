@@ -18,12 +18,12 @@ export function ScienceProcess() {
           <div
             aria-hidden="true"
             className="absolute left-0 right-0 top-9 hidden h-px md:block"
-            style={{ background: "linear-gradient(90deg,transparent,rgba(226,89,14,0.3),transparent)" }}
+            style={{ background: "linear-gradient(90deg,transparent,rgba(212,175,55,0.3),transparent)" }}
           />
           {scienceProcess.map((step, index) => (
             <div key={step.n} className="reveal" style={{ ["--reveal-delay" as string]: `${index === 3 ? 240 : index * 100}ms` }}>
               <div className="glass relative flex h-full flex-col rounded-3xl p-6">
-                <span className="font-display text-5xl font-extrabold leading-none text-transparent [-webkit-text-stroke:1.5px_rgba(226,89,14,0.4)]">
+                <span className="font-display text-5xl font-extrabold leading-none text-transparent [-webkit-text-stroke:1.5px_rgba(212,175,55,0.4)]">
                   {step.n}
                 </span>
                 <h3 className="mt-4 font-display text-xl font-bold text-fg">{step.title}</h3>

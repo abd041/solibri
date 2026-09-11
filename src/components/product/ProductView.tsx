@@ -53,7 +53,7 @@ export function ProductView({ product, related }: { product: Product; related: P
             width: "40rem",
             height: "40rem",
             opacity: 0.2,
-            background: "radial-gradient(circle, rgba(226,89,14,0.9) 0%, rgba(226,89,14,0) 70%)",
+            background: "radial-gradient(circle, rgba(212,175,55,0.9) 0%, rgba(212,175,55,0) 70%)",
             top: "-18%",
             left: "-12%",
           }}
@@ -69,12 +69,12 @@ export function ProductView({ product, related }: { product: Product; related: P
                 ) : null}
                 <div
                   className="relative flex aspect-[4/5] max-h-[520px] w-full items-center justify-center lg:aspect-square lg:max-h-none"
-                  style={{ background: "#151312", filter: "drop-shadow(0 0 0.6px rgba(226, 89, 14, 0.5))" }}
+                  style={{ background: "#151312", filter: "drop-shadow(0 0 0.6px rgba(212, 175, 55, 0.5))" }}
                 >
                   <div
                     aria-hidden="true"
                     className="absolute inset-0"
-                    style={{ background: "radial-gradient(58% 52% at 50% 44%, rgba(226,89,14,0.24), transparent 72%)" }}
+                    style={{ background: "radial-gradient(58% 52% at 50% 44%, rgba(212,175,55,0.24), transparent 72%)" }}
                   />
                   <Image
                     src={product.image}

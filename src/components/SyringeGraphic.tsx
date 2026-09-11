@@ -74,11 +74,11 @@ export function SyringeGraphic({
               <stop offset="100%" stopColor="#1e1e1e" />
             </linearGradient>
             <linearGradient id={gid("hub")} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#ff9a4a" />
-              <stop offset="18%" stopColor="#f07020" />
-              <stop offset="45%" stopColor="#e2590e" />
-              <stop offset="72%" stopColor="#c44808" />
-              <stop offset="100%" stopColor="#8a3002" />
+              <stop offset="0%" stopColor="#ead48a" />
+              <stop offset="18%" stopColor="#d8b84a" />
+              <stop offset="45%" stopColor="#d4af37" />
+              <stop offset="72%" stopColor="#a68622" />
+              <stop offset="100%" stopColor="#7a6418" />
             </linearGradient>
             <linearGradient id={gid("hubShine")} x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#ffffff" stopOpacity="0.55" />
@@ -86,11 +86,11 @@ export function SyringeGraphic({
               <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
             </linearGradient>
             <linearGradient id={gid("liquid")} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#ffb06a" stopOpacity="0.95" />
-              <stop offset="18%" stopColor="#f07828" stopOpacity="0.92" />
-              <stop offset="48%" stopColor="#e2590e" stopOpacity="0.9" />
-              <stop offset="78%" stopColor="#c2450a" stopOpacity="0.92" />
-              <stop offset="100%" stopColor="#7a2c02" stopOpacity="0.95" />
+              <stop offset="0%" stopColor="#f0dc9a" stopOpacity="0.95" />
+              <stop offset="18%" stopColor="#e0c25c" stopOpacity="0.92" />
+              <stop offset="48%" stopColor="#d4af37" stopOpacity="0.9" />
+              <stop offset="78%" stopColor="#a68622" stopOpacity="0.92" />
+              <stop offset="100%" stopColor="#6b5714" stopOpacity="0.95" />
             </linearGradient>
             <linearGradient id={gid("liquidEdge")} x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />

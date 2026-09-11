@@ -20,7 +20,7 @@ export function HowItWorksKits() {
             style={{
               clipPath: "polygon(0% 0%, calc(100% - 22px) 0%, 100% 22px, 100% 100%, 0% 100%)",
               background:
-                "linear-gradient(160deg, rgba(226,89,14,0.14) 0%, rgba(20,14,10,0.85) 45%, rgba(10,7,4,0.95) 100%)",
+                "linear-gradient(160deg, rgba(212,175,55,0.14) 0%, rgba(20,14,10,0.85) 45%, rgba(10,7,4,0.95) 100%)",
             }}
           >
             <div
@@ -30,7 +30,7 @@ export function HowItWorksKits() {
                 width: "34rem",
                 height: "34rem",
                 opacity: 0.4,
-                background: "radial-gradient(circle, rgba(226,89,14,0.9) 0%, rgba(226,89,14,0) 70%)",
+                background: "radial-gradient(circle, rgba(212,175,55,0.9) 0%, rgba(212,175,55,0) 70%)",
                 top: "-45%",
                 right: "-10%",
               }}
