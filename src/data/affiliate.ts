@@ -40,7 +40,7 @@ export const affiliateTerms = [
       "Self-purchases made through your own referral link never qualify for commission.",
       "One affiliate account per person.",
       "Abuse — self-dealing, spam, or misleading claims — leads to suspension and forfeiture of unconfirmed earnings.",
-      "Solibri Labs may close the affiliate programme at any time, with notice.",
+      "Aurelius Biosciences may close the affiliate programme at any time, with notice.",
     ],
   },
 ] as const;

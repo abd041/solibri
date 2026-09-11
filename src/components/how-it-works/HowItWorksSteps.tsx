@@ -18,7 +18,7 @@ export function HowItWorksSteps() {
             Three steps from peptide to prepared
           </h2>
           <p className="max-w-[60ch] text-[clamp(0.95rem,1.6vw,1.075rem)] leading-relaxed text-fg-muted">
-            Research peptides without the guesswork. Here's exactly what happens from the moment you choose Solibri.
+            Research peptides without the guesswork. Here's exactly what happens from the moment you choose Aurelius Biosciences.
           </p>
         </div>
         <div className="relative grid grid-cols-1 gap-6 md:grid-cols-3">

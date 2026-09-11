@@ -13,8 +13,7 @@ const pageKeywords = [
   "premium peptides",
   "10ml vials",
   "peptide pen kit",
-  "Solibri Labs",
-  "Solibri",
+  "Aurelius Biosciences",
 ];
 
 export function generateStaticParams() {
@@ -24,7 +23,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const article = getGuideArticle(slug);
-  if (!article) return { title: "Guide · Solibri Labs" };
+  if (!article) return { title: "Guide · Aurelius Biosciences" };
 
   return {
     title: article.metaTitle,
@@ -34,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       canonical: `/guides/${article.slug}`,
     },
     openGraph: {
-      title: "Solibri Labs — Research-Grade Peptides",
+      title: "Aurelius Biosciences — Research-Grade Peptides",
       description:
         "Premium research peptides. Choose your peptide, then your kit — Standard or Premium Pen. Batch-tested, precisely dosed.",
       images: [brandedOgImage],

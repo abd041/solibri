@@ -21,7 +21,7 @@ export function AboutStory() {
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="reveal">
             <span className="mb-5 inline-flex items-center gap-1.5 rounded-full border border-brand-600/18 bg-brand-600/8 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-brand-300">
-              Why Solibri exists
+              Why Aurelius Biosciences exists
             </span>
             <h2 className="text-gradient font-display text-[clamp(1.9rem,4.5vw,3rem)] font-extrabold leading-[1.05]">
               Research peptides, held to a proper standard

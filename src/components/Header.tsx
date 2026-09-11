@@ -121,12 +121,12 @@ export function Header() {
           </button>
 
           <div className="flex justify-center lg:justify-start lg:shrink-0">
-            <Link aria-label="Solibri Labs — home" className="inline-flex shrink-0" href="/" onClick={() => setHash("")}>
+            <Link aria-label="Aurelius Biosciences — home" className="inline-flex shrink-0" href="/" onClick={() => setHash("")}>
               <Image
-                src="/brand/solibri-shield-logo.png"
-                alt="Solibri Labs"
-                width={140}
-                height={36}
+                src="/updated-logo.png"
+                alt="Aurelius Biosciences"
+                width={1254}
+                height={1254}
                 className="h-9 w-auto shrink-0"
                 priority
               />

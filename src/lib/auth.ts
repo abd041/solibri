@@ -14,7 +14,7 @@ export function safeNextPath(value: string | null): string | null {
 }
 
 export const gatedPageMetadata: Metadata = {
-  title: "Solibri Labs — Research-Grade Peptides",
+  title: "Aurelius Biosciences — Research-Grade Peptides",
   robots: {
     index: false,
     follow: false,

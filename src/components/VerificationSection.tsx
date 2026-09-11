@@ -26,7 +26,7 @@ export function VerificationSection() {
                     Peptides you can actually verify
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-fg-muted">
-                    Every Solibri peptide is batch-tested for purity and identity before it&apos;s kitted — so what&apos;s in
+                    Every Aurelius Biosciences peptide is batch-tested for purity and identity before it&apos;s kitted — so what&apos;s in
                     the vial matches the label, every time.
                   </p>
                   <ul className="mt-5 flex flex-col gap-2.5">
@@ -41,7 +41,7 @@ export function VerificationSection() {
                   </div>
                 </div>
                 <div className="relative h-40 w-32 shrink-0 self-center sm:h-[180px] sm:w-40">
-                  <Image src="/products/box.webp" alt="Solibri peptide carton" fill className="object-contain" sizes="160px" />
+                  <Image src="/products/box.webp" alt="Aurelius Biosciences peptide carton" fill className="object-contain" sizes="160px" />
                 </div>
               </div>
             </article>
@@ -71,7 +71,7 @@ export function VerificationSection() {
                 <div className="relative h-40 w-32 shrink-0 self-center sm:h-[180px] sm:w-40">
                   <Image
                     src="/products/cartage.webp"
-                    alt="Solibri Premium Pen Kit cartridge"
+                    alt="Aurelius Biosciences Premium Pen Kit cartridge"
                     fill
                     className="object-contain"
                     sizes="160px"

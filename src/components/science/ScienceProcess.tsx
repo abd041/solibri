@@ -10,7 +10,7 @@ export function ScienceProcess() {
             From vial to kit
           </h2>
           <p className="max-w-[60ch] text-[clamp(0.95rem,1.6vw,1.075rem)] leading-relaxed text-fg-muted">
-            Every Solibri peptide passes through the same rigorous pipeline — built to make sure what's on the label is
+            Every Aurelius Biosciences peptide passes through the same rigorous pipeline — built to make sure what's on the label is
             exactly what's in the vial.
           </p>
         </div>

@@ -7,14 +7,14 @@ import { AffiliateSteps } from "@/components/affiliate/AffiliateSteps";
 import { AffiliateTerms } from "@/components/affiliate/AffiliateTerms";
 
 export const metadata: Metadata = {
-  title: "Solibri Labs — Research-Grade Peptides",
+  title: "Aurelius Biosciences — Research-Grade Peptides",
   description:
-    "Premium research peptides from Solibri Labs. Choose your peptide, then your kit — a Standard Kit with sterile water or a Premium Pen Kit with a disposable injection pen. Batch-tested, precisely dosed.",
+    "Premium research peptides from Aurelius Biosciences. Choose your peptide, then your kit — a Standard Kit with sterile water or a Premium Pen Kit with a disposable injection pen. Batch-tested, precisely dosed.",
   alternates: {
     canonical: "/affiliate",
   },
   openGraph: {
-    title: "Solibri Labs — Research-Grade Peptides",
+    title: "Aurelius Biosciences — Research-Grade Peptides",
     description:
       "Premium research peptides. Choose your peptide, then your kit — Standard or Premium Pen. Batch-tested, precisely dosed.",
     images: [brandedOgImage],

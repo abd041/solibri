@@ -95,7 +95,7 @@ export const guideFaqs: GuideFaqItem[] = [
       "Keep lyophilised vials refrigerated (2–8 °C) and protected from light until reconstitution. After reconstitution, refrigerate and use within the window stated on your batch documentation. Never freeze reconstituted solution unless your protocol explicitly requires it.",
   },
   {
-    title: "Are Solibri Labs peptides for human use?",
+    title: "Are Aurelius Biosciences peptides for human use?",
     content:
       "No. All products are sold strictly for laboratory research use only. They are not intended for human or veterinary consumption, diagnosis, or treatment.",
   },
@@ -114,13 +114,13 @@ export const guideFaqs: GuideFaqItem[] = [
 export const guideArticles: GuideArticle[] = [
   {
     slug: "reconstitution",
-    metaTitle: "Reconstitution guide · Solibri Labs",
+    metaTitle: "Reconstitution guide · Aurelius Biosciences",
     metaDescription:
-      "How to reconstitute lyophilised research peptides with bacteriostatic water — step-by-step guidance for Solibri Labs kits.",
+      "How to reconstitute lyophilised research peptides with bacteriostatic water — step-by-step guidance for Aurelius Biosciences kits.",
     eyebrow: "Research guide",
     heading: "How to reconstitute peptides",
     subtitle:
-      "A practical walkthrough for preparing lyophilised peptides with bacteriostatic water — written for Solibri Labs Standard and Premium Pen Kits.",
+      "A practical walkthrough for preparing lyophilised peptides with bacteriostatic water — written for Aurelius Biosciences Standard and Premium Pen Kits.",
     intro:
       "Lyophilised peptides arrive as a dry powder under vacuum. Reconstitution means adding sterile bacteriostatic water to bring them back into solution at a known concentration. Take your time — rushing this step is the most common source of foaming, incomplete dissolution, and concentration errors.",
     ctas: [
@@ -180,7 +180,7 @@ export const guideArticles: GuideArticle[] = [
   },
   {
     slug: "storage",
-    metaTitle: "Peptide storage guide · Solibri Labs",
+    metaTitle: "Peptide storage guide · Aurelius Biosciences",
     metaDescription:
       "How to store lyophilised and reconstituted research peptides — temperature, light, labelling, and transport.",
     eyebrow: "Research guide",
@@ -234,7 +234,7 @@ export const guideArticles: GuideArticle[] = [
   },
   {
     slug: "safety",
-    metaTitle: "Peptide safety & handling · Solibri Labs",
+    metaTitle: "Peptide safety & handling · Aurelius Biosciences",
     metaDescription:
       "Laboratory safety for research peptides — PPE, sterile technique, sharps disposal, and research-use-only requirements.",
     eyebrow: "Research guide",
@@ -253,7 +253,7 @@ export const guideArticles: GuideArticle[] = [
       {
         number: "01",
         title: "Research use only",
-        body: "Solibri Labs products are sold strictly for in vitro / laboratory research. They are not medicines, supplements, or veterinary products. Do not use them for human or animal administration, diagnosis, or treatment.",
+        body: "Aurelius Biosciences products are sold strictly for in vitro / laboratory research. They are not medicines, supplements, or veterinary products. Do not use them for human or animal administration, diagnosis, or treatment.",
       },
       {
         number: "02",

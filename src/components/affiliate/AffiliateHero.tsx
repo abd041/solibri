@@ -23,7 +23,7 @@ export function AffiliateHero() {
             Affiliate Programme
           </span>
           <h1 className="text-gradient font-display text-[clamp(2.2rem,5.5vw,3.75rem)] font-extrabold leading-[1.05]">
-            Partner with Solibri Labs — earn {AFFILIATE_RATE}% on every order you refer
+            Partner with Aurelius Biosciences — earn {AFFILIATE_RATE}% on every order you refer
           </h1>
           <p className="mt-3 max-w-2xl text-[clamp(0.9rem,1.6vw,1.05rem)] leading-relaxed text-fg-muted">
             Share your link. Your audience gets {AFFILIATE_RATE}% off at checkout automatically, and you earn{" "}

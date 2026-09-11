@@ -38,7 +38,7 @@ export const HOW_TO_USE =
   "Store lyophilised vials refrigerated until reconstitution. Standard Kits include 2 ml sterile bacteriostatic water; Premium Pen Kits add a disposable injection pen for precise, single-use reconstitution. For laboratory research use only.";
 
 export const SHIPPING_COPY =
-  "Free carbon-neutral shipping on orders over £75. Every Solibri Labs order is backed by our 60-day guarantee — if a batch doesn't meet spec, we'll replace it or refund you in full.";
+  "Free carbon-neutral shipping on orders over £75. Every Aurelius Biosciences order is backed by our 60-day guarantee — if a batch doesn't meet spec, we'll replace it or refund you in full.";
 
 const PEPTIDE_BENEFITS = [
   "HPLC-verified purity",

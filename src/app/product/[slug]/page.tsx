@@ -12,8 +12,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const product = getProduct(slug);
-  if (!product) return { title: "Product · Solibri Labs" };
-  const title = `${product.name} · Solibri Labs`;
+  if (!product) return { title: "Product · Aurelius Biosciences" };
+  const title = `${product.name} · Aurelius Biosciences`;
   return {
     title,
     description: product.description,
@@ -45,7 +45,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
       description: product.description,
       image: `https://solibrilabs.co.uk${product.image}`,
       url: `https://solibrilabs.co.uk/product/${product.slug}`,
-      brand: { "@type": "Brand", name: "Solibri Labs" },
+      brand: { "@type": "Brand", name: "Aurelius Biosciences" },
       offers: {
         "@type": "Offer",
         priceCurrency: "GBP",

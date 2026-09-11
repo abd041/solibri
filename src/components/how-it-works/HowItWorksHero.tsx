@@ -21,7 +21,7 @@ export function HowItWorksHero() {
             Simple by design
           </span>
           <h1 className="text-gradient font-display text-[clamp(2.2rem,5.5vw,3.75rem)] font-extrabold leading-[1.05]">
-            How Solibri works
+            How Aurelius Biosciences works
           </h1>
           <p className="mt-3 max-w-2xl text-[clamp(0.9rem,1.6vw,1.05rem)] leading-relaxed text-fg-muted">
             Choose your peptide, choose your kit, then reconstitute and store. From your first order onward, here's exactly

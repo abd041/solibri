@@ -8,23 +8,22 @@ import { AboutStory } from "@/components/about/AboutStory";
 import { FinalCTA } from "@/components/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "About · Solibri Labs",
+  title: "About · Aurelius Biosciences",
   description:
-    "Why Solibri Labs exists: research-grade peptides, batch-tested for purity, precisely reconstituted and kitted in the UK — with nothing hidden.",
+    "Why Aurelius Biosciences exists: research-grade peptides, batch-tested for purity, precisely reconstituted and kitted in the UK — with nothing hidden.",
   keywords: [
     "peptides",
     "research peptides",
     "premium peptides",
     "10ml vials",
     "peptide pen kit",
-    "Solibri Labs",
-    "Solibri",
+    "Aurelius Biosciences",
   ],
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "Solibri Labs — Research-Grade Peptides",
+    title: "Aurelius Biosciences — Research-Grade Peptides",
     description:
       "Premium research peptides. Choose your peptide, then your kit — Standard or Premium Pen. Batch-tested, precisely dosed.",
     images: [brandedOgImage],

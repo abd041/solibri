@@ -33,7 +33,7 @@ export function LoginForm() {
   }
 
   return (
-    <AuthLayout title="Sign in" subtitle="Welcome back to Solibri Labs.">
+    <AuthLayout title="Sign in" subtitle="Welcome back to Aurelius Biosciences.">
       <form className="space-y-4" onSubmit={onSubmit}>
         {error ? (
           <p role="alert" className="rounded-lg border border-red-500/40 bg-red-950/60 px-3 py-2 text-sm text-red-200">
@@ -83,7 +83,7 @@ export function LoginForm() {
         </button>
       </form>
       <p className="mt-5 text-center text-sm text-fg-muted">
-        New to Solibri Labs?{" "}
+        New to Aurelius Biosciences?{" "}
         <Link href={signupHref} className="font-semibold text-brand-300 hover:text-fg">
           Create an account
         </Link>

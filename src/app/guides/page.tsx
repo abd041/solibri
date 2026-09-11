@@ -7,13 +7,13 @@ import { GuidesHero } from "@/components/guides/GuidesHero";
 import { guidesFaqJsonLd } from "@/data/guides";
 
 export const metadata: Metadata = {
-  title: "Research Guides · Solibri Labs",
-  description: "Peptide reconstitution, storage, safety, and research best practices from Solibri Labs.",
+  title: "Research Guides · Aurelius Biosciences",
+  description: "Peptide reconstitution, storage, safety, and research best practices from Aurelius Biosciences.",
   alternates: {
     canonical: "/guides",
   },
   openGraph: {
-    title: "Solibri Labs — Research-Grade Peptides",
+    title: "Aurelius Biosciences — Research-Grade Peptides",
     description:
       "Premium research peptides. Choose your peptide, then your kit — Standard or Premium Pen. Batch-tested, precisely dosed.",
     images: [brandedOgImage],

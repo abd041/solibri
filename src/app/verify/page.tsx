@@ -3,13 +3,13 @@ import { VerifyBatch } from "@/components/verify/VerifyBatch";
 import { brandedOgImage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Verify your batch · Solibri Labs",
-  description: "Check that your Solibri Labs peptide is genuine by entering its unique batch verification code.",
+  title: "Verify your batch · Aurelius Biosciences",
+  description: "Check that your Aurelius Biosciences peptide is genuine by entering its unique batch verification code.",
   alternates: {
     canonical: "/verify",
   },
   openGraph: {
-    title: "Solibri Labs — Research-Grade Peptides",
+    title: "Aurelius Biosciences — Research-Grade Peptides",
     description:
       "Premium research peptides. Choose your peptide, then your kit — Standard or Premium Pen. Batch-tested, precisely dosed.",
     images: [brandedOgImage],
@@ -38,7 +38,7 @@ export default function VerifyPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-300">Batch verification</p>
             <h1 className="mt-2 font-display text-[clamp(2rem,5vw,3rem)] font-extrabold text-fg">Verify your batch</h1>
             <p className="mt-3 text-pretty text-fg-muted">
-              Enter the unique code from your vial or kit packaging. We&apos;ll confirm it&apos;s a genuine Solibri Labs batch.
+              Enter the unique code from your vial or kit packaging. We&apos;ll confirm it&apos;s a genuine Aurelius Biosciences batch.
             </p>
           </div>
           <VerifyBatch />

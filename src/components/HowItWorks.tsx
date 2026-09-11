@@ -22,7 +22,7 @@ export function HowItWorks() {
       <div className="mx-auto w-full max-w-[1200px] px-5 sm:px-6 lg:px-8">
         <div className="reveal mb-14 flex flex-col items-center gap-4 text-center">
           <h2 className="max-w-[20ch] font-display text-[clamp(1.9rem,4.5vw,3.25rem)] font-extrabold leading-[1.06] tracking-tight text-fg">
-            How Solibri works
+            How Aurelius Biosciences works
           </h2>
           <p className="max-w-[60ch] text-[clamp(0.95rem,1.6vw,1.075rem)] leading-relaxed text-fg-muted">
             Research peptides without the guesswork. Three steps from peptide to prepared.

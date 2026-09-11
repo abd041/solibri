@@ -21,10 +21,10 @@ export function ScienceHero() {
             Built on testing
           </span>
           <h1 className="text-gradient font-display text-[clamp(2.2rem,5.5vw,3.75rem)] font-extrabold leading-[1.05]">
-            The science behind Solibri
+            The science behind Aurelius Biosciences
           </h1>
           <p className="mt-3 max-w-2xl text-[clamp(0.9rem,1.6vw,1.05rem)] leading-relaxed text-fg-muted">
-            Every Solibri peptide is verified before it ships — tested batch by batch for purity, precisely reconstituted,
+            Every Aurelius Biosciences peptide is verified before it ships — tested batch by batch for purity, precisely reconstituted,
             and kitted to the same exacting standard.
           </p>
         </div>

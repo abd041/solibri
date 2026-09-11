@@ -1,5 +1,5 @@
 export const SITE_ORIGIN = "https://solibrilabs.co.uk";
-export const SITE_NAME = "Solibri Labs";
+export const SITE_NAME = "Aurelius Biosciences";
 
 export const brandedOgImage = {
   url: "/brand/shop-banner.jpg",
@@ -13,7 +13,7 @@ export const organizationJsonLd = {
   "@type": "Organization",
   name: SITE_NAME,
   url: SITE_ORIGIN,
-  logo: `${SITE_ORIGIN}/brand/solibri-logo.png`,
+  logo: `${SITE_ORIGIN}/updated-logo.png`,
   description:
     "Premium research peptides, batch-tested for purity and precisely kitted for laboratory research.",
 } as const;

@@ -19,7 +19,7 @@ export function ScienceMethodology() {
             A testing-led approach
           </h2>
           <p className="max-w-[60ch] text-[clamp(0.95rem,1.6vw,1.075rem)] leading-relaxed text-fg-muted">
-            Research peptides are too often sold on trust alone. Solibri flips that: every batch is tested for purity, and
+            Research peptides are too often sold on trust alone. Aurelius Biosciences flips that: every batch is tested for purity, and
             every kit is prepared to the same standard.
           </p>
         </div>

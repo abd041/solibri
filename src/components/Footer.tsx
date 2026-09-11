@@ -35,12 +35,12 @@ export function Footer() {
         </div>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
           <div className="col-span-2 lg:col-span-2">
-            <Link aria-label="Solibri Labs — home" className="inline-flex shrink-0" href="/">
+            <Link aria-label="Aurelius Biosciences — home" className="inline-flex shrink-0" href="/">
               <Image
-                src="/brand/solibri-shield-logo.png"
-                alt="Solibri Labs"
-                width={140}
-                height={36}
+                src="/updated-logo.png"
+                alt="Aurelius Biosciences"
+                width={1254}
+                height={1254}
                 className="h-9 w-auto shrink-0"
               />
             </Link>
@@ -107,7 +107,7 @@ export function Footer() {
         </div>
         <div className="mt-12 h-px w-full bg-line" />
         <div className="mt-6 flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
-          <p className="text-xs text-fg-muted">© 2026 Solibri Labs. All rights reserved.</p>
+          <p className="text-xs text-fg-muted">© 2026 Aurelius Biosciences. All rights reserved.</p>
           <p className="max-w-2xl text-[11px] leading-relaxed text-fg-muted">
             Products are supplied for laboratory and research purposes only. Not for human or veterinary use, and not
             intended to diagnose, treat, cure or prevent any condition.

@@ -6,31 +6,31 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
-  title: "Solibri Labs — Research-Grade Peptides",
+  title: "Aurelius Biosciences — Research-Grade Peptides",
   description:
-    "Premium research peptides from Solibri Labs. Choose your peptide, then your kit — a Standard Kit with sterile water or a Premium Pen Kit with a disposable injection pen. Batch-tested, precisely dosed.",
-  keywords: ["research peptides", "Solibri Labs", "BPC-157", "TB-500", "Ipamorelin", "peptide calculator"],
+    "Premium research peptides from Aurelius Biosciences. Choose your peptide, then your kit — a Standard Kit with sterile water or a Premium Pen Kit with a disposable injection pen. Batch-tested, precisely dosed.",
+  keywords: ["research peptides", "Aurelius Biosciences", "BPC-157", "TB-500", "Ipamorelin", "peptide calculator"],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Solibri Labs — Research-Grade Peptides",
+    title: "Aurelius Biosciences — Research-Grade Peptides",
     description:
       "Premium research peptides. Choose your peptide, then your kit — Standard or Premium Pen. Batch-tested, precisely dosed.",
-    siteName: "Solibri Labs",
+    siteName: "Aurelius Biosciences",
     type: "website",
     images: [
       {
         url: "/brand/shop-banner.jpg",
         width: 1200,
         height: 630,
-        alt: "Solibri Labs",
+        alt: "Aurelius Biosciences",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Solibri Labs — Research-Grade Peptides",
+    title: "Aurelius Biosciences — Research-Grade Peptides",
     description: "Premium research peptides. Choose your peptide, then your kit — Standard or Premium Pen.",
     images: ["/brand/shop-banner.jpg"],
   },

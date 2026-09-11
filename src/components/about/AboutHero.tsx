@@ -24,7 +24,7 @@ export function AboutHero() {
             Research peptides, done properly
           </h1>
           <p className="mt-3 max-w-2xl text-[clamp(0.9rem,1.6vw,1.05rem)] leading-relaxed text-fg-muted">
-            Solibri Labs was founded to bring a proper standard to research peptides — batch-tested for purity, precisely
+            Aurelius Biosciences was founded to bring a proper standard to research peptides — batch-tested for purity, precisely
             dosed, and kitted in the UK with nothing to hide.
           </p>
         </div>

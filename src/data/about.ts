@@ -1,8 +1,8 @@
 export const ABOUT_EMAIL = "support@solibrilabs.co.uk";
 
 export const aboutStory = [
-  "The research-peptide market is full of unlabelled vials, inconsistent quality, and sellers who leave you guessing about what you’re actually buying. We started Solibri Labs because that isn’t good enough.",
-  "Every Solibri peptide is batch-tested for purity before it’s kitted, then prepared for precise reconstitution and presented cleanly. Choose your peptide, then choose your kit — a Standard Kit with 2\u00a0ml of sterile water, or a Premium Pen Kit with a disposable injection pen in a premium presentation box.",
+  "The research-peptide market is full of unlabelled vials, inconsistent quality, and sellers who leave you guessing about what you’re actually buying. We started Aurelius Biosciences because that isn’t good enough.",
+  "Every Aurelius Biosciences peptide is batch-tested for purity before it’s kitted, then prepared for precise reconstitution and presented cleanly. Choose your peptide, then choose your kit — a Standard Kit with 2\u00a0ml of sterile water, or a Premium Pen Kit with a disposable injection pen in a premium presentation box.",
   "Our aim is simple: make research-grade peptides consistent, verifiable, and properly presented — so you know exactly what you have in front of you.",
 ];
 

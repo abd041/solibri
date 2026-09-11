@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ButtonLink } from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Solibri Labs — Research-Grade Peptides",
+  title: "Aurelius Biosciences — Research-Grade Peptides",
   robots: {
     index: false,
   },

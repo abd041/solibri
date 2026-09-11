@@ -77,13 +77,13 @@ export function VerifyBatch() {
             <p className="text-sm font-bold text-amber-500">We couldn&apos;t verify this code</p>
             <p className="mt-1 text-sm text-fg-muted">
               Double-check for typos — codes are case-sensitive. If it still won&apos;t verify, this may not be a genuine
-              Solibri Labs product. Contact support and we&apos;ll help.
+              Aurelius Biosciences product. Contact support and we&apos;ll help.
             </p>
           </div>
         ) : null}
       </div>
       <p className="mt-6 flex items-center justify-center gap-1.5 text-center text-xs text-fg-faint">
-        <ShieldCheckIcon size={13} /> Every genuine Solibri Labs product carries a unique verification code.
+        <ShieldCheckIcon size={13} /> Every genuine Aurelius Biosciences product carries a unique verification code.
       </p>
     </div>
   );

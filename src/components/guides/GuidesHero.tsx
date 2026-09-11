@@ -24,7 +24,7 @@ export function GuidesHero() {
             Guides & research resources
           </h1>
           <p className="mt-3 max-w-2xl text-[clamp(0.9rem,1.6vw,1.05rem)] leading-relaxed text-fg-muted">
-            Practical reference for reconstitution, storage, and safe laboratory handling — written for Solibri Labs
+            Practical reference for reconstitution, storage, and safe laboratory handling — written for Aurelius Biosciences
             kits.
           </p>
         </div>

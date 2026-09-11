@@ -31,7 +31,7 @@ export const footerShop = [
 ];
 
 export const footerCompany = [
-  { href: "/about", label: "About Solibri" },
+  { href: "/about", label: "About Aurelius" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/science", label: "The Science" },
   { href: "/about#reviews", label: "Reviews" },

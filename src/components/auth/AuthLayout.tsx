@@ -18,13 +18,13 @@ export function AuthLayout({
     <main className="relative flex min-h-screen items-center justify-center bg-ink-800 px-4 py-12">
       <div className="w-full max-w-sm">
         <div className="mb-6 flex justify-center">
-          <Link aria-label="Solibri Labs — home" href="/" className="inline-flex shrink-0">
+          <Link aria-label="Aurelius Biosciences — home" href="/" className="inline-flex shrink-0">
             <Image
-              src="/brand/solibri-shield-logo.png"
+              src="/updated-logo.png"
               alt=""
               aria-hidden={true}
-              width={766}
-              height={832}
+              width={1254}
+              height={1254}
               className="h-12 w-auto shrink-0"
               priority
             />

@@ -16,7 +16,7 @@ export function HowItWorksFaq() {
             Frequently asked questions
           </h2>
           <p className="max-w-[60ch] text-[clamp(0.95rem,1.6vw,1.075rem)] leading-relaxed text-fg-muted">
-            Everything you need to know about ordering, kitting and preparing Solibri peptides.
+            Everything you need to know about ordering, kitting and preparing Aurelius Biosciences peptides.
           </p>
         </div>
         <div className="reveal">

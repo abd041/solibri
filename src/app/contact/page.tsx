@@ -4,14 +4,14 @@ import { brandedOgImage } from "@/lib/site";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact · Solibri Labs",
-  description: "Contact Solibri Labs for order support, product questions, wholesale enquiries, and partnerships.",
-  keywords: ["peptides", "research peptides", "premium peptides", "10ml vials", "peptide pen kit", "Solibri Labs", "Solibri"],
+  title: "Contact · Aurelius Biosciences",
+  description: "Contact Aurelius Biosciences for order support, product questions, wholesale enquiries, and partnerships.",
+  keywords: ["peptides", "research peptides", "premium peptides", "10ml vials", "peptide pen kit", "Aurelius Biosciences"],
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
-    title: "Solibri Labs — Research-Grade Peptides",
+    title: "Aurelius Biosciences — Research-Grade Peptides",
     description:
       "Premium research peptides. Choose your peptide, then your kit — Standard or Premium Pen. Batch-tested, precisely dosed.",
     images: [brandedOgImage],
@@ -42,7 +42,7 @@ export default function ContactPage() {
               Support
             </span>
             <h1 className="text-gradient font-display text-[clamp(2.2rem,5.5vw,3.75rem)] font-extrabold leading-[1.05]">
-              Contact Solibri Labs
+              Contact Aurelius Biosciences
             </h1>
             <p className="mt-3 max-w-2xl text-[clamp(0.9rem,1.6vw,1.05rem)] leading-relaxed text-fg-muted">
               Questions about an order, a batch, or a partnership? Send us a message — we typically reply within one

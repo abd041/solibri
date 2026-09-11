@@ -27,7 +27,7 @@ export function Hero() {
         <div className="hero-scene__product">
           <Image
             src="/brand/solibri-hero-box-trimmed.png"
-            alt="Matte-black Solibri Labs product carton"
+            alt="Matte-black Aurelius Biosciences product carton"
             fill
             className="object-contain"
             sizes="(max-width: 1023px) 56vw, 340px"
