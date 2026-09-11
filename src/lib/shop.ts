@@ -1,10 +1,12 @@
 import type { Product } from "@/data/products";
 
-export type ShopCategory = "all" | "premium-peptides" | "accessories";
+export type ShopCategory = "all" | "premium-peptides" | "accessories" | "premium-10ml-vials";
 export type ShopSort = "featured" | "price-asc" | "price-desc" | "name";
 
+const SHOP_CATEGORIES: ShopCategory[] = ["premium-peptides", "accessories", "premium-10ml-vials"];
+
 export function parseShopCategory(value?: string | null): ShopCategory {
-  if (value === "premium-peptides" || value === "accessories") return value;
+  if (value && SHOP_CATEGORIES.includes(value as ShopCategory)) return value as ShopCategory;
   return "all";
 }
 

@@ -172,6 +172,11 @@ export function Header() {
             onClick={openCart}
           >
             <CartIcon size={18} />
+            {itemCount > 0 ? (
+              <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-brand-600 px-1 text-[10px] font-bold text-fg-on-brand">
+                {itemCount}
+              </span>
+            ) : null}
           </button>
 
           <div className="nav-cut-rail hidden lg:flex" role="group" aria-label="Quick actions">
@@ -195,6 +200,7 @@ export function Header() {
               <span className={`nav-cut-inner gap-1.5 text-[11px] font-bold tracking-wide ${cartPulse ? "cart-pop" : ""}`}>
                 <CartIcon size={16} />
                 <span className="leading-none">Cart</span>
+                {itemCount > 0 ? <span className="leading-none tabular-nums opacity-90">{itemCount}</span> : null}
               </span>
             </button>
           </div>

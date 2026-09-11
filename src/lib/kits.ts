@@ -1,15 +1,7 @@
 import { colourLabel, formatAddonCents, KIT_SETTINGS, type KitFormatId, type PenColour } from "@/data/kits";
 import { getProduct, type Product } from "@/data/products";
+import type { CartItemInput } from "@/lib/cart";
 import { fromCents, toCents } from "@/lib/money";
-
-type CartLine = {
-  id: string;
-  slug: string;
-  name: string;
-  price: number;
-  image: string;
-  quantity: number;
-};
 
 export type FormatQty = {
   id: KitFormatId;
@@ -46,31 +38,40 @@ export function kitTotalCents(product: Product, formats: FormatQty[]) {
   return total;
 }
 
-export function kitCartLines(product: Product, formats: FormatQty[]): CartLine[] {
-  const lines: CartLine[] = [];
+export function kitCartLines(product: Product, formats: FormatQty[]): CartItemInput[] {
+  const lines: CartItemInput[] = [];
   for (const row of formats) {
     if (row.quantity <= 0) continue;
     const option = KIT_SETTINGS.formatOptions.find((o) => o.id === row.id)!;
+    const colourKey = row.id === "reusable" || row.id === "premium" ? `::${row.colour}` : "";
+    const kitId = `${product.slug}::${option.id}${colourKey}`;
 
     lines.push({
-      id: `${product.slug}::${option.name}`,
+      id: `${kitId}::peptide`,
       slug: product.slug,
-      name: `${product.name} · ${option.name}`,
+      name: product.name,
       price: product.price,
       image: product.image,
       quantity: row.quantity,
+      format: product.format,
+      kitLabel: option.name,
+      kitId,
+      role: "primary",
     });
 
     if (row.id === "vial") {
       const water = getProduct(KIT_SETTINGS.includedVialBacWaterSlug);
       if (water) {
         lines.push({
-          id: `${water.slug}::Included`,
+          id: `${kitId}::water`,
           slug: water.slug,
-          name: `${water.name} · Included`,
+          name: water.name,
           price: water.price,
           image: water.image,
           quantity: row.quantity,
+          format: water.format,
+          kitId,
+          role: "included",
         });
       }
     }
@@ -79,12 +80,16 @@ export function kitCartLines(product: Product, formats: FormatQty[]): CartLine[]
       const pen = getProduct(option.productSlug || KIT_SETTINGS.disposableSlug);
       if (pen) {
         lines.push({
-          id: `${pen.slug}::${option.name}`,
+          id: `${kitId}::pen`,
           slug: pen.slug,
-          name: `${pen.name} · ${option.name}`,
+          name: pen.name,
           price: pen.price,
           image: pen.image,
           quantity: row.quantity,
+          format: pen.format,
+          kitLabel: option.name,
+          kitId,
+          role: "component",
         });
       }
     }
@@ -92,14 +97,18 @@ export function kitCartLines(product: Product, formats: FormatQty[]): CartLine[]
     if (row.id === "reusable" || row.id === "premium") {
       const pen = getProduct(option.productSlug || KIT_SETTINGS.reusablePenSlug);
       if (pen) {
-        const suffix = row.id === "premium" ? option.name : colourLabel(row.colour);
+        const label = row.id === "premium" ? option.name : `${option.name} · ${colourLabel(row.colour)}`;
         lines.push({
-          id: `${pen.slug}::${suffix}`,
+          id: `${kitId}::pen`,
           slug: pen.slug,
-          name: `${pen.name} · ${suffix}`,
+          name: pen.name,
           price: pen.price,
           image: pen.image,
           quantity: row.quantity,
+          format: pen.format,
+          kitLabel: label,
+          kitId,
+          role: "component",
         });
       }
     }
@@ -109,12 +118,15 @@ export function kitCartLines(product: Product, formats: FormatQty[]): CartLine[]
       if (hardCase) {
         const discounted = Math.max(0, hardCase.price - fromCents(KIT_SETTINGS.premiumDiscountCents));
         lines.push({
-          id: `${hardCase.slug}::Premium kit`,
+          id: `${kitId}::case`,
           slug: hardCase.slug,
-          name: `${hardCase.name} · Premium kit`,
+          name: hardCase.name,
           price: discounted,
           image: hardCase.image,
           quantity: row.quantity,
+          format: hardCase.format,
+          kitId,
+          role: "included",
         });
       }
     }

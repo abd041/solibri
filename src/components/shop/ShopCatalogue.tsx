@@ -41,9 +41,8 @@ export function ShopCatalogue({ initialCategory }: { initialCategory?: string })
 
   return (
     <>
-      <section className="relative z-10 pb-8 max-lg:pb-28">
-        <ShopHero />
-        <div className="mx-auto grid w-full max-w-[1200px] gap-5 px-4 pt-3 pb-5 sm:px-6 lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-6 lg:px-8">
+      <ShopHero />
+      <div className="mx-auto grid w-full max-w-[1200px] gap-5 px-4 pt-3 pb-5 sm:px-6 lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-6 lg:px-8">
           <aside
             className="sticky top-24 hidden self-start rounded-[18px] border border-line bg-surface-raised p-3.5 lg:block"
             aria-label="Filters"
@@ -91,57 +90,63 @@ export function ShopCatalogue({ initialCategory }: { initialCategory?: string })
                   <option value="name">Name</option>
                 </select>
                 <span className="shrink-0 whitespace-nowrap text-[11px] font-medium tabular-nums text-fg-faint">
-                  {visible.length} products
+                  {visible.length} {visible.length === 1 ? "product" : "products"}
                 </span>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3 xl:grid-cols-4">
-              {visible.map((product, index) => (
-                <ProductCard key={product.slug} product={product} delay={index * 40} />
-              ))}
-            </div>
+            {visible.length === 0 ? (
+              <p className="py-16 text-center text-fg-muted">No products match. Try clearing filters.</p>
+            ) : (
+              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3 xl:grid-cols-4">
+                {visible.map((product, index) => (
+                  <ProductCard key={product.slug} product={product} delay={index * 40} />
+                ))}
+              </div>
+            )}
           </section>
-        </div>
-      </section>
+      </div>
 
-      <div
-        className={`overlay-backdrop fixed inset-0 z-[80] transition-opacity duration-300 lg:hidden ${
-          filtersOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        }`}
-        onClick={() => setFiltersOpen(false)}
-        aria-hidden={!filtersOpen}
-      />
-      <aside
-        className={`fixed inset-x-0 bottom-0 z-[85] flex max-h-[min(82vh,640px)] flex-col rounded-t-[22px] border-t border-line-strong bg-surface-raised p-5 transition-transform duration-450 ease-[var(--ease-smooth)] lg:hidden ${
-          filtersOpen ? "translate-y-0" : "translate-y-full"
-        }`}
-        role="dialog"
-        aria-label="Filters"
-        aria-modal={filtersOpen}
-      >
-        <div className="mb-4 flex items-center justify-between">
-          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-fg-faint">Filters</p>
-          <button
-            type="button"
-            aria-label="Close filters"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-fg-muted hover:bg-surface-subtle hover:text-fg"
-            onClick={() => setFiltersOpen(false)}
-          >
-            <CloseIcon size={18} />
-          </button>
+      {filtersOpen ? (
+        <div
+          className="fixed inset-0 z-[60] flex items-end bg-black/60 lg:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Filters"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setFiltersOpen(false);
+          }}
+        >
+          <div className="max-h-[86vh] w-full overflow-auto rounded-t-[18px] border border-line bg-ink-800 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
+            <div className="mb-3 flex items-center justify-between">
+              <h2 className="text-base font-extrabold text-fg">Filters</h2>
+              <button
+                type="button"
+                aria-label="Close"
+                className="grid h-9 w-9 place-items-center rounded-full text-fg-muted hover:bg-surface-subtle"
+                onClick={() => setFiltersOpen(false)}
+              >
+                <CloseIcon size={18} />
+              </button>
+            </div>
+            <ShopFilters
+              name="shop-cat-mobile"
+              category={category}
+              inStockOnly={inStockOnly}
+              onCategoryChange={(next) => {
+                updateCategory(next);
+              }}
+              onInStockChange={setInStockOnly}
+            />
+            <button
+              type="button"
+              className="mt-4 w-full rounded-full bg-brand-500 py-3.5 text-sm font-extrabold text-fg-on-brand"
+              onClick={() => setFiltersOpen(false)}
+            >
+              Apply filters
+            </button>
+          </div>
         </div>
-        <div className="overflow-y-auto pb-4">
-          <ShopFilters
-            name="shop-cat-mobile"
-            category={category}
-            inStockOnly={inStockOnly}
-            onCategoryChange={(next) => {
-              updateCategory(next);
-            }}
-            onInStockChange={setInStockOnly}
-          />
-        </div>
-      </aside>
+      ) : null}
     </>
   );
 }

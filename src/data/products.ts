@@ -1,5 +1,5 @@
 export type ProductAction = "configure" | "add";
-export type ProductCategory = "premium-peptides" | "accessories";
+export type ProductCategory = "premium-peptides" | "accessories" | "premium-10ml-vials";
 
 export type ProductSpec = {
   label: string;
@@ -239,6 +239,7 @@ export const categoryCounts = {
   all: products.length,
   "premium-peptides": products.filter((p) => p.category === "premium-peptides").length,
   accessories: products.filter((p) => p.category === "accessories").length,
+  "premium-10ml-vials": products.filter((p) => p.category === "premium-10ml-vials").length,
   inStock: products.filter((p) => p.inStock).length,
 };
 

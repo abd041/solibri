@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AffiliateCommission } from "@/components/affiliate/AffiliateCommission";
+import { brandedOgImage } from "@/lib/site";
 import { AffiliateHero } from "@/components/affiliate/AffiliateHero";
 import { AffiliateJoin } from "@/components/affiliate/AffiliateJoin";
 import { AffiliateSteps } from "@/components/affiliate/AffiliateSteps";
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     title: "Solibri Labs — Research-Grade Peptides",
     description:
       "Premium research peptides. Choose your peptide, then your kit — Standard or Premium Pen. Batch-tested, precisely dosed.",
+    images: [brandedOgImage],
   },
 };
 

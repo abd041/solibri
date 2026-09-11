@@ -48,6 +48,7 @@ export function ButtonLink({
   children,
   variant = "outline",
   size = "sm",
+  fullWidth,
   className = "",
   ...props
 }: {
@@ -55,10 +56,15 @@ export function ButtonLink({
   children: ReactNode;
   variant?: Variant;
   size?: Size;
+  fullWidth?: boolean;
   className?: string;
 } & Omit<ComponentProps<typeof Link>, "href" | "className" | "children">) {
   return (
-    <Link href={href} className={`${base} ${variants[variant]} ${sizes[size]} ${className}`} {...props}>
+    <Link
+      href={href}
+      className={`${base} ${variants[variant]} ${sizes[size]} ${fullWidth ? "w-full" : ""} ${className}`}
+      {...props}
+    >
       <span className="relative z-10 inline-flex items-center gap-2">{children}</span>
     </Link>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { brandedOgImage } from "@/lib/site";
 import { GuideArticle } from "@/components/guides/GuideArticle";
 import { GuideArticleHero } from "@/components/guides/GuideArticleHero";
 import { getGuideArticle, guideArticleSlugs } from "@/data/guides";
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       title: "Solibri Labs — Research-Grade Peptides",
       description:
         "Premium research peptides. Choose your peptide, then your kit — Standard or Premium Pen. Batch-tested, precisely dosed.",
+      images: [brandedOgImage],
     },
   };
 }

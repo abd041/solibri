@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { SiteShell } from "@/components/SiteShell";
+import { SITE_ORIGIN } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.solibrilabs.co.uk"),
+  metadataBase: new URL(SITE_ORIGIN),
   title: "Solibri Labs — Research-Grade Peptides",
   description:
     "Premium research peptides from Solibri Labs. Choose your peptide, then your kit — a Standard Kit with sterile water or a Premium Pen Kit with a disposable injection pen. Batch-tested, precisely dosed.",
@@ -38,13 +40,16 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#070707",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <SiteShell>
-          <main className="relative min-h-screen pt-[4.75rem] sm:pt-24 md:pt-28">{children}</main>
-        </SiteShell>
+        <OrganizationJsonLd />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

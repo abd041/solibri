@@ -9,17 +9,8 @@ import {
   type ReactNode,
 } from "react";
 import type { Product } from "@/data/products";
-
-export type CartItem = {
-  id: string;
-  slug: string;
-  name: string;
-  price: number;
-  image: string;
-  quantity: number;
-};
-
-export type CartItemInput = Omit<CartItem, "quantity"> & { quantity: number };
+import type { CartItem, CartItemInput } from "@/lib/cart";
+import { isQtyControlled } from "@/lib/cart";
 
 type CartContextValue = {
   items: CartItem[];
@@ -38,6 +29,19 @@ type CartContextValue = {
 
 const CartContext = createContext<CartContextValue | null>(null);
 
+function mergeLines(prev: CartItem[], lines: CartItemInput[]) {
+  const next = prev.map((item) => ({ ...item }));
+  for (const line of lines) {
+    const existing = next.find((item) => item.id === line.id);
+    if (existing) {
+      existing.quantity += line.quantity;
+    } else {
+      next.push({ ...line });
+    }
+  }
+  return next;
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -48,18 +52,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const toggleCart = useCallback(() => setIsOpen((v) => !v), []);
 
   const addLines = useCallback((lines: CartItemInput[]) => {
-    setItems((prev) => {
-      const next = [...prev];
-      for (const line of lines) {
-        const existing = next.find((item) => item.id === line.id);
-        if (existing) {
-          existing.quantity += line.quantity;
-        } else {
-          next.push({ ...line });
-        }
-      }
-      return next;
-    });
+    if (lines.length === 0) return;
+    setItems((prev) => mergeLines(prev, lines));
     setCartPulse((n) => n + 1);
     setIsOpen(true);
   }, []);
@@ -74,6 +68,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
           price: product.price,
           image: product.image,
           quantity,
+          format: product.format,
+          role: "primary",
         },
       ]);
     },
@@ -82,16 +78,35 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const setQuantity = useCallback((id: string, quantity: number) => {
     setItems((prev) => {
-      if (quantity <= 0) return prev.filter((item) => item.id !== id);
-      return prev.map((item) => (item.id === id ? { ...item, quantity } : item));
+      const target = prev.find((item) => item.id === id);
+      if (!target || !isQtyControlled(target)) return prev;
+      const qty = Math.min(99, quantity);
+      if (qty <= 0) {
+        if (target.kitId) return prev.filter((item) => item.kitId !== target.kitId);
+        return prev.filter((item) => item.id !== id);
+      }
+      return prev.map((item) => {
+        if (target.kitId ? item.kitId === target.kitId : item.id === id) {
+          return { ...item, quantity: qty };
+        }
+        return item;
+      });
     });
   }, []);
 
   const removeItem = useCallback((id: string) => {
-    setItems((prev) => prev.filter((item) => item.id !== id));
+    setItems((prev) => {
+      const target = prev.find((item) => item.id === id);
+      if (!target) return prev;
+      if (target.kitId) return prev.filter((item) => item.kitId !== target.kitId);
+      return prev.filter((item) => item.id !== id);
+    });
   }, []);
 
-  const itemCount = useMemo(() => items.reduce((sum, item) => sum + item.quantity, 0), [items]);
+  const itemCount = useMemo(
+    () => items.filter((item) => item.role === "primary").reduce((sum, item) => sum + item.quantity, 0),
+    [items],
+  );
   const subtotal = useMemo(
     () => items.reduce((sum, item) => sum + item.price * item.quantity, 0),
     [items],

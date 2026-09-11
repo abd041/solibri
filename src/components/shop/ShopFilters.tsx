@@ -47,6 +47,17 @@ export function ShopFilters({ name, category, inStockOnly, onCategoryChange, onI
           Accessories
           <span className="ml-auto font-mono text-[11px] text-fg-faint">{categoryCounts.accessories}</span>
         </label>
+        <label className="flex cursor-pointer items-center gap-2 py-1 text-sm text-fg-muted hover:text-fg">
+          <input
+            type="radio"
+            className="accent-brand-500"
+            name={name}
+            checked={category === "premium-10ml-vials"}
+            onChange={() => onCategoryChange("premium-10ml-vials")}
+          />
+          Premium 10ml Vials
+          <span className="ml-auto font-mono text-[11px] text-fg-faint">{categoryCounts["premium-10ml-vials"]}</span>
+        </label>
       </div>
       <div>
         <h3 className="mb-2 text-[10px] font-bold uppercase tracking-[0.12em] text-fg-muted">Availability</h3>

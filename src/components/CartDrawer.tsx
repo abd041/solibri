@@ -1,17 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 import { ButtonLink } from "@/components/Button";
-import { CartIcon, CloseIcon } from "@/components/icons";
+import { CartIcon, CloseIcon, MinusIcon, PlusIcon, TrashIcon } from "@/components/icons";
 import { useCart } from "@/context/CartContext";
-
-function formatPrice(value: number) {
-  return `£${value.toFixed(2)}`;
-}
+import { freeShippingProgress, isQtyControlled, kitCaption, remainingForFreeShipping } from "@/lib/cart";
+import { formatGBP } from "@/lib/money";
 
 export function CartDrawer() {
   const { isOpen, closeCart, items, itemCount, subtotal, setQuantity, removeItem } = useCart();
+  const remaining = remainingForFreeShipping(subtotal);
+  const progress = freeShippingProgress(subtotal);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -19,7 +20,11 @@ export function CartDrawer() {
       if (e.key === "Escape") closeCart();
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
   }, [isOpen, closeCart]);
 
   return (
@@ -43,7 +48,7 @@ export function CartDrawer() {
           <h2 className="flex items-center gap-2.5 font-display text-lg font-bold text-fg">
             <CartIcon size={20} className="text-brand-300" />
             Your Cart
-            <span className="text-sm font-medium text-fg-faint">( {itemCount} )</span>
+            <span className="text-sm font-medium text-fg-faint">({itemCount})</span>
           </h2>
           <button
             type="button"
@@ -67,64 +72,126 @@ export function CartDrawer() {
           </div>
         ) : (
           <>
+            <div className="px-5 pt-4">
+              <p className="text-xs text-fg-muted">
+                {remaining > 0 ? (
+                  <>
+                    You&apos;re <span className="font-semibold tabular-nums text-brand-200">{formatGBP(remaining)}</span>{" "}
+                    away from free shipping.
+                  </>
+                ) : (
+                  <span className="font-semibold text-cyan-300">You&apos;ve unlocked free shipping! 🎉</span>
+                )}
+              </p>
+              <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-surface-raised">
+                <div
+                  className="h-full rounded-full bg-[linear-gradient(90deg,#e2590e,#f3985a)] transition-all duration-500"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+            </div>
             <div className="flex-1 overflow-y-auto px-5 py-4">
-              <ul className="flex flex-col gap-4">
-                {items.map((item) => (
-                  <li key={item.id} className="flex gap-3 rounded-2xl border border-line bg-ink-700/70 p-3">
-                    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-ink-800">
-                      <Image src={item.image} alt={item.name} fill className="object-contain p-1.5" sizes="64px" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-start justify-between gap-2">
-                        <p className="truncate font-display text-sm font-bold text-fg">{item.name}</p>
-                        <p className="shrink-0 font-display text-sm font-extrabold tabular-nums text-fg">
-                          {formatPrice(item.price * item.quantity)}
-                        </p>
-                      </div>
-                      <p className="mt-0.5 text-xs tabular-nums text-fg-faint">{formatPrice(item.price)} each</p>
-                      <div className="mt-2 flex items-center justify-between">
-                        <div className="inline-flex items-center rounded-full border border-line">
-                          <button
-                            type="button"
-                            aria-label={`Decrease ${item.name} quantity`}
-                            className="h-8 w-8 text-fg-muted hover:text-fg"
-                            onClick={() => setQuantity(item.id, item.quantity - 1)}
+              <ul className="flex flex-col gap-3">
+                {items.map((item) => {
+                  const controlled = isQtyControlled(item);
+                  const caption = kitCaption(item);
+                  return (
+                    <li key={item.id} className="glass flex gap-3 rounded-2xl p-3">
+                      <Link
+                        href={`/product/${item.slug}`}
+                        onClick={closeCart}
+                        className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-surface-subtle"
+                      >
+                        <Image src={item.image} alt={item.name} fill className="object-contain p-1.5" sizes="80px" />
+                      </Link>
+                      <div className="flex min-w-0 flex-1 flex-col">
+                        <div className="flex items-start justify-between gap-2">
+                          <Link
+                            href={`/product/${item.slug}`}
+                            onClick={closeCart}
+                            className="truncate text-sm font-semibold text-fg hover:text-brand-200"
                           >
-                            −
-                          </button>
-                          <span className="min-w-6 text-center text-sm tabular-nums text-fg">{item.quantity}</span>
-                          <button
-                            type="button"
-                            aria-label={`Increase ${item.name} quantity`}
-                            className="h-8 w-8 text-fg-muted hover:text-fg"
-                            onClick={() => setQuantity(item.id, item.quantity + 1)}
-                          >
-                            +
-                          </button>
+                            {item.name}
+                          </Link>
+                          {controlled ? (
+                            <button
+                              type="button"
+                              onClick={() => removeItem(item.id)}
+                              aria-label={`Remove ${item.name}`}
+                              className="shrink-0 text-fg-faint transition-colors hover:text-red-400"
+                            >
+                              <TrashIcon size={16} />
+                            </button>
+                          ) : null}
                         </div>
-                        <button
-                          type="button"
-                          className="text-xs text-fg-faint hover:text-fg"
-                          onClick={() => removeItem(item.id)}
-                        >
-                          Remove
-                        </button>
+                        {item.format ? <p className="truncate text-xs text-fg-faint">{item.format}</p> : null}
+                        {caption ? (
+                          <p
+                            className={`truncate text-[11px] font-semibold ${
+                              item.role === "primary" ? "text-brand-200" : "text-emerald-300"
+                            }`}
+                          >
+                            {caption}
+                          </p>
+                        ) : null}
+                        <div className="mt-auto flex items-center justify-between pt-2">
+                          {controlled ? (
+                            <div className="inline-flex items-center rounded-full border border-line">
+                              <button
+                                type="button"
+                                aria-label={`Decrease ${item.name} quantity`}
+                                className="inline-flex h-8 w-8 items-center justify-center text-fg-muted transition-[transform,color] duration-150 ease-out hover:text-fg active:scale-[0.96]"
+                                onClick={() => setQuantity(item.id, item.quantity - 1)}
+                              >
+                                <MinusIcon size={14} />
+                              </button>
+                              <span className="w-7 text-center text-sm font-semibold tabular-nums text-fg">
+                                {item.quantity}
+                              </span>
+                              <button
+                                type="button"
+                                aria-label={`Increase ${item.name} quantity`}
+                                className="inline-flex h-8 w-8 items-center justify-center text-fg-muted transition-[transform,color] duration-150 ease-out hover:text-fg active:scale-[0.96]"
+                                onClick={() => setQuantity(item.id, item.quantity + 1)}
+                              >
+                                <PlusIcon size={14} />
+                              </button>
+                            </div>
+                          ) : (
+                            <span className="text-xs font-semibold tabular-nums text-fg-muted">× {item.quantity}</span>
+                          )}
+                          <span className="text-sm font-bold tabular-nums text-fg">
+                            {formatGBP(item.price * item.quantity)}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                ))}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className="border-t border-line px-5 py-4">
-              <div className="mb-3 flex items-center justify-between text-sm">
+              <div className="mb-3 flex items-center justify-between">
                 <span className="text-fg-muted">Subtotal</span>
-                <span className="font-display text-base font-extrabold tabular-nums text-fg">{formatPrice(subtotal)}</span>
+                <span className="font-display text-xl font-bold tabular-nums text-fg">{formatGBP(subtotal)}</span>
               </div>
-              <button
-                type="button"
-                className="relative inline-flex h-[3.25rem] w-full items-center justify-center gap-2 rounded-full bg-brand-600 px-8 text-[15px] font-semibold text-fg-on-brand transition-[background-color,transform] duration-200 ease-[var(--ease-smooth)] hover:bg-brand-700 active:scale-[0.96]"
+              <p className="mb-3 text-xs text-fg-faint">Shipping & taxes calculated at checkout.</p>
+              <ButtonLink
+                href="/checkout"
+                variant="primary"
+                size="lg"
+                fullWidth
+                className="rounded-xl"
+                onClick={closeCart}
               >
                 Checkout
+              </ButtonLink>
+              <button
+                type="button"
+                className="mt-1 w-full py-2 text-sm font-semibold text-fg-muted transition-colors hover:text-fg"
+                onClick={closeCart}
+              >
+                Continue shopping
               </button>
             </div>
           </>
